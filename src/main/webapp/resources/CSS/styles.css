@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.topbar{
+  background-color: #808080;
+  border-left: 25px #696969 solid;
+  border-right: 25px #696969 solid;
+  padding: 2px;
+  color: #dcdcdc;
+  text-align: center;
+  font-family: times;
+}
+form{
+  width: 20%;
+  border-style: outset;
+  margin-top: 100px;
+  margin-left: 450px;
+  padding: 40px;
+  background-color: #eee;
+}
+.form-button{
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: #fff;
+  display: inline-block;
+  background-color: #428bca;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+input {
+	display: inline-block;
+    float: right;
+}
