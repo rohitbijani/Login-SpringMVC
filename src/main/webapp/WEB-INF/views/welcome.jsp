@@ -15,14 +15,17 @@ if(request.getSession().getAttribute("username")==null)
 {
 	response.sendRedirect("login");
 }
-/* String name=request.getParameter("uname"); */
 else{
 
-String s= (String) request.getSession().getAttribute("username");
+	/*String s= (String) request.getSession().getAttribute("username");
 out.print("<h3>Welcome "+s+"! </h3>");
-/* session.setAttribute("username", name); */
+ session.setAttribute("username", name); */
 
-
+ %>
+ 
+<div>WELCOME ${ username } !</div>
+ 
+<%
 out.print("<a href='logout'>Logout</a>");
 }
 %>

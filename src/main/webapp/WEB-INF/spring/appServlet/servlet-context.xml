@@ -31,7 +31,12 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-		 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/registerProcess"/>
+				<beans:bean class="com.bridgeit.interceptor.RegistrationInterceptor"></beans:bean>	
+		</mvc:interceptor>
+	</mvc:interceptors>	 
 
 	<context:component-scan
 		base-package="com.bridgeit.controller" />

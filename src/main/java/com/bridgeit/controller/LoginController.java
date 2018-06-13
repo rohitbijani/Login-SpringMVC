@@ -36,9 +36,7 @@ public class LoginController {
 	    if (user!= null) {
 	    	HttpSession session=request.getSession();
 			session.setAttribute("username", user.getUsername());			
-	    	
-	    mav = new ModelAndView("welcome");
-	    mav.addObject("username", user.getUsername());
+	    	mav=new ModelAndView("redirect:/loginSuccess");
 	    } 
 	    else {
 	    mav = new ModelAndView("login");
@@ -47,15 +45,34 @@ public class LoginController {
 	    return mav;
 	  }
 	
-	@RequestMapping(value="/logout")
-	private String logout(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
+	private ModelAndView success(HttpServletRequest request, HttpServletResponse response) {
+	    ModelAndView mav = null;
+    	HttpSession session=request.getSession(false);
+    	
+    	if (session!=null) {
+    		mav = new ModelAndView("welcome");
+    	    mav.addObject("username", session.getAttribute("username"));
+		}
+    	else {
+    		mav = new ModelAndView("login");
+    		
+		}
+    	
+	    
+		return mav;
+
+	}
+	
+	@RequestMapping(value="/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession(false);
 		if(session != null) {
 			session.removeAttribute("username");
 			session.invalidate();
-			return "login";
+			
 		}
-		return null;
+		return "login";
 	}
 
 }

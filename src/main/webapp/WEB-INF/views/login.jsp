@@ -22,7 +22,7 @@ Username: <input type="text" name="username"/><br/><br/>
 Password: <input type="password" name="password"/><br/><br/>
 <button type="submit" class="form-button">Login</button>
 <a href="registration"><i>Register</i></a>
-<div>${message}</div>
+<div><tt>${message}</tt></div>
 
 </form>	
 </body>

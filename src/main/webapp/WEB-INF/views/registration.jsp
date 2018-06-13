@@ -17,13 +17,15 @@
 </div>
 
 <form name="registerForm" modelAttribute="user" action="registerProcess" onsubmit="return validateform()" method="post">
-Username: <input type="text" name="username"/><br/><br/>
-E-mail: <input type="email" name="email"/><br/><br/>
-Password: <input type="password" name="password"/><br/><br/>
-Phone: <input type="phone" name="phone"/><br/><br/>
+Username: <input type="text" name="username" value="${uname}"/><br/><br/>
+E-mail: <input type="email" name="email" value="${ email }"/><br/><br/>
+Password: <input type="password" name="password" value="${ pwd }"/><br/><br/>
+Phone: <input type="tel" name="phone" value="${ phone }"/><br/><br/>
 <center>
 <button type="submit" value="register" class="form-button">Register</button>
 </center>
+
+<div><tt>${ msg }</tt></div>
 </form>
 </body>
 </html>

@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User validateUser(Login login) {
-		System.out.println(login.getUsername());
 		User user=userDao.validate(login);
 		if(user!=null) {
 			return user;
